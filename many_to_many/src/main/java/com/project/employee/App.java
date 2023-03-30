@@ -20,7 +20,7 @@ public class App
       SessionFactory factory = cfg.buildSessionFactory();
       
       Emp e1 = new Emp();	//creating objects & initalize them
-      e1.setEid(101);
+      e1.setEid(101);		//set the values
       e1.setEname("yash");
       
       Emp e2 = new Emp();
@@ -81,7 +81,7 @@ public class App
       
       // now creating a list of empoyees and map with project
       
-      List<Emp> l1= new ArrayList<Emp>();
+      List<Emp> l1= new ArrayList<Emp>(); // using list to save multiple objects
       l1.add(e4);
       l1.add(e6);
       l1.add(e9);
@@ -149,7 +149,7 @@ public class App
       e7.setProj(lp6);
       e10.setProj(lp6);
       
-      Session s = factory.openSession();
+      Session s = factory.openSession(); //uing session 
       Transaction t = s.beginTransaction(); 
       s.save(p1);  //saving all objects
       s.save(p2);
@@ -167,8 +167,8 @@ public class App
       s.save(e9);
       s.save(e10);
  
-      t.commit();
-      factory.close();     
+      t.commit(); // saving the objects permanantly
+      factory.close();     //closing the factory
       
     }
 }
